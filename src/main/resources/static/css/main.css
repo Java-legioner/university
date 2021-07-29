@@ -1,0 +1,21 @@
+.flex{
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    width:20%;
+    border: 1px solid lightgray;
+    margin-left: 1em;
+
+}
+
+.card-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60%;
+}
