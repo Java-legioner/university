@@ -11,6 +11,7 @@ public class Applicant {
     private String firstName;
     private String lastName;
     private Integer age;
+    private String email;
 
     private Faculty faculty;
 
@@ -76,4 +77,13 @@ public class Applicant {
     public void setFaculty(Faculty faculty) {
         this.faculty = faculty;
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
+
