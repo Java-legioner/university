@@ -25,9 +25,10 @@
     <!-- Sidebar -->
     <div class="w3-sidebar w3-light-grey w3-bar-block " style="width:15%">
         <h3 class="w3-bar-item">Menu</h3>
-        <a href="/create-applicant" class="w3-bar-item w3-button">Home</a>
-        <a href="/home" class="w3-bar-item w3-button">All applicants</a>
-        <form style="margin-left: 10px;" action="/logout" method="post">
+        <a href="/home" class="w3-bar-item w3-button">Home</a>
+        <a href="/create-applicant" class="w3-bar-item w3-button">Apply for admission</a>
+        <a href="/all-applicants" class="w3-bar-item w3-button">All applicants</a>
+        <form style="margin-left: 5%;margin-top: 5%;" action="/logout" method="post">
             <input type="submit" class="button red big" value="Sign Out"/> <input
                 type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </form>
@@ -59,10 +60,10 @@
                         <thead>
                         <tr>
                             <th>#</th>
+                            <th>Photo</th>
                             <th>Name</th>
                             <th>Age</th>
                             <th>Email</th>
-
                             <th>Faculty</th>
                             <th>Points</th>
                             <th>Actions</th>
@@ -73,6 +74,9 @@
                                 <tbody>
                                 <tr>
                                     <td>${currentApplicant.id}</td>
+                                    <td class="center"><img src="https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png"
+                                             alt="Norway"
+                                             class="avatar"></td>
                                     <td>${currentApplicant.firstName} ${currentApplicant.lastName}</td>
                                     <td>${currentApplicant.age}</td>
                                     <td>${currentApplicant.email}</td>

@@ -112,3 +112,13 @@ table.table td i {
     margin-top: 6px;
     font-size: 95%;
 }
+.avatar{
+    width: 60px;
+    text-align: center;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+}
+

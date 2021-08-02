@@ -18,6 +18,7 @@ public class ApplicantService  {
     }
 
     public List<Applicant> findAllApplicants(){
+
         return applicantRepository.findAll();
     }
 }

@@ -20,19 +20,20 @@
 
 <div class="lc-block">
     <!-- Sidebar -->
-    <div class="w3-sidebar w3-light-grey w3-bar-block " style="width:25%">
+    <div class="w3-sidebar w3-light-grey w3-bar-block " style="width:15%">
         <h3 class="w3-bar-item">Menu</h3>
-        <a href="/home" class="w3-bar-item w3-button">All applicant</a>
-        <a href="/create-applicant" class="w3-bar-item w3-button">Create applicant</a>
+        <a href="/home" class="w3-bar-item w3-button">Home</a>
+        <a href="/create-applicant" class="w3-bar-item w3-button">Apply for admission</a>
+        <a href="/all-applicants" class="w3-bar-item w3-button">All applicants</a>
         <a href="#" class="w3-bar-item w3-button">Bucket</a>
-        <form style="margin-left: 10px;" action="/logout" method="post">
+        <form style="margin-left: 5%;margin-top: 5%;" action="/logout" method="post">
             <input type="submit" class="button red big" value="Sign Out"/> <input
                 type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </form>
     </div>
 
     <!-- Page Content -->
-    <div style="margin-left:25%">
+    <div style="margin-left:15%">
 
         <div class="w3-container w3-teal">
             <h1> Registration of applicant</h1>
