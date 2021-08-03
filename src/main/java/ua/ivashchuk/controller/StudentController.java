@@ -34,21 +34,6 @@ public class StudentController {
         return getStudentItems();
     }
 
-    @RequestMapping(value = "/student", method = RequestMethod.POST)
-    public ModelAndView create(@RequestParam String applicantId){
-        Applicant applicant = applicantService.findById(Integer.parseInt(applicantId));
-
-        Student student = new Student();
-        student.setApplicant(applicant);
-        student.setPurchaseDate(new Date());
-
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        String username = auth.getName();
-        User user = userService.findByUsername(username);
-
-        studentService.save(student);
-        return getStudentItems();
-    }
 
     @RequestMapping(value = "/student", method = RequestMethod.GET)
         public ModelAndView delete(@RequestParam String id){

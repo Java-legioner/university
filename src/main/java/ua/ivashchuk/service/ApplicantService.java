@@ -29,4 +29,6 @@ public class ApplicantService  {
     public void delete(Applicant applicant){
         applicantRepository.delete(applicant);
     }
+
+
 }

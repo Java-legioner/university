@@ -29,8 +29,9 @@
         <a href="/create-applicant" class="w3-bar-item w3-button">Apply for admission</a>
         <a href="/all-applicants" class="w3-bar-item w3-button">All applicants</a>
         <a href="/students" class="w3-bar-item w3-button">Students</a>
+        <a href="/statements" class="w3-bar-item w3-button">Statement</a>
         <form style="margin-left: 5%;margin-top: 5%;" action="/logout" method="post">
-            <input type="submit" class="button red big" value="Sign Out"/> <input
+            <input type="submit" class="button btn-sign_out" value="Sign Out"/> <input
                 type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </form>
     </div>
@@ -38,7 +39,7 @@
 
     <div style="margin-left:15%">
         <div class="w3-container w3-teal card-text">
-            <h1> Applicants</h1>
+            <h1>Students</h1>
         </div>
         <div class="container">
             <div class="table-responsive">

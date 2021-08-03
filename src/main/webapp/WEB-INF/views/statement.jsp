@@ -2,7 +2,6 @@
          pageEncoding="UTF-8" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <c:set var="cotextPath" value="${pageContext.request.contextPath}"/>
 
@@ -40,14 +39,14 @@
 
     <div style="margin-left:15%">
         <div class="w3-container w3-teal card-text">
-            <h1> Applicants</h1>
+            <h1> Statement</h1>
         </div>
         <div class="container">
             <div class="table-responsive">
                 <div class="table-wrapper">
                     <div class="table-title">
                         <div class="row">
-                            <div class="col-sm-8"><h2>List of <b>applicants</b></h2></div>
+                            <div class="col-sm-8"><h2>Statement</h2></div>
                             <div class="col-sm-4">
                                 <div class="search-box">
                                     <i class="material-icons">&#xE8B6;</i>
@@ -59,42 +58,36 @@
                     <table class="table table-striped table-hover table-bordered">
                         <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Photo</th>
-                            <th>Name</th>
-                            <th>Age</th>
-                            <th>Email</th>
+<%--                            <th>#</th>--%>
+<%--                            <th>Photo</th>--%>
+                            <th>First Name</th>
+                            <th>Last Name</th>
                             <th>Faculty</th>
                             <th>Subject</th>
                             <th>Subject</th>
                             <th>Subject</th>
+                            <th>GPA</th>
                             <th>Actions</th>
                         </tr>
                         </thead>
-                        <c:if test="${not empty applicants}">
-                            <c:forEach items="${applicants}" var="currentApplicant">
+                        <c:if test="${not empty statementItems}">
+                            <c:forEach items="${statementItems}" var="statement">
                                 <tbody>
                                 <tr>
-                                    <td>${currentApplicant.id}</td>
-                                    <td class="center"><img
-                                            src="data:image/jpa;base64, ${currentApplicant.encodedImage}"
-                                            style="width:25%"></td>
-                                    <td>${currentApplicant.firstName} ${currentApplicant.lastName}</td>
-                                    <td>${currentApplicant.age}</td>
-                                    <td>${currentApplicant.email}</td>
-                                    <td>${currentApplicant.faculty}</td>
-                                    <td>${currentApplicant.subject1} <br> Point: ${currentApplicant.point1}</td>
-                                    <td>${currentApplicant.subject2} <br> Point: ${currentApplicant.point2}</td>
-                                    <td>${currentApplicant.subject3} <br> Point: ${currentApplicant.point3}</td>
+<%--                                    <td>${statement.id}</td>--%>
+<%--                                    <td class="center"><img src="data:image/jpa;base64, ${statement.applicant.encodedImage}"--%>
+<%--                                                            style="width:25%"></td>--%>
+                                    <td>${statement.applicant.firstName} </td>
+                                    <td>${statement.applicant.lastName}</td>
+                                    <td>${statement.applicant.faculty}</td>
+                                    <td>${statement.applicant.subject1} <br> Point: ${statement.applicant.point1}</td>
+                                    <td>${statement.applicant.subject2} <br> Point: ${statement.applicant.point2}</td>
+                                    <td>${statement.applicant.subject3} <br> Point: ${statement.applicant.point3}</td>
+                                    <td>${statement.applicant.GPA}</td>
                                     <td>
 
-                                        <form:form action="${cotextPath}/statement" method="POST"
-                                                   enctype="multipart/form-data">
-                                            <input type="hidden" value="${currentApplicant.id}" name="applicantId"
-                                                   class="edit" title="add to statement"
-                                                   data-toggle="tooltip">
-                                            <input type="submit" class="material-icons icon" value="&#xea4d;">
-                                        </form:form>
+                                        <a href="statement?id=${statement.id}" class="delete" title="Delete" data-toggle="tooltip"><i
+                                                class="material-icons">&#xE872;</i></a>
                                     </td>
                                 </tr>
                                 </tbody>
