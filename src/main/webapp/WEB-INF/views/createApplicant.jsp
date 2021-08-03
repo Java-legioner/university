@@ -1,4 +1,5 @@
 <%@ page import="ua.ivashchuk.domain.Faculty" %>
+<%@ page import="ua.ivashchuk.domain.Subject" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
@@ -11,9 +12,10 @@
 <html>
 <head>
 
-
     <title>Create Applicants</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="
+      <c:url value="/css/main.css"/>"/>
 
 </head>
 <body class="security-app">
@@ -25,9 +27,9 @@
         <a href="/home" class="w3-bar-item w3-button">Home</a>
         <a href="/create-applicant" class="w3-bar-item w3-button">Apply for admission</a>
         <a href="/all-applicants" class="w3-bar-item w3-button">All applicants</a>
-        <a href="#" class="w3-bar-item w3-button">Bucket</a>
+        <a href="/students" class="w3-bar-item w3-button">Students</a>
         <form style="margin-left: 5%;margin-top: 5%;" action="/logout" method="post">
-            <input type="submit" class="button red big" value="Sign Out"/> <input
+            <input type="submit" class="button btn-sign_out" value="Sign Out"/> <input
                 type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </form>
     </div>
@@ -42,9 +44,9 @@
 
 
         <div class="w3-container">
-            <%--@elvariable id="applicant" type=""--%>
+
             <form:form method="POST" action="${contextPath}/addApplicant" enctype="multipart/form-data" >
-                <table>
+                <table class="form-applicant">
                     <tr>
                         <td>First Name</td>
                         <td><input type="text"name="firstName"></td>
@@ -75,13 +77,53 @@
                         </td>
                     </tr>
 
-<%--                    <tr>--%>
-<%--                        <td>Points</td>--%>
-<%--                        <td><input type="number" name="points"></td>--%>
-<%--                    </tr>--%>
                     <tr>
                         <td>Photo (format 3 x 4)</td>
                         <td><input type="file" name="image"></td>
+                    </tr>
+
+                </table>
+
+                <h4>Select the subjects and indicate the points received <br> as a result of the external evaluation</h4>
+                <table class="form-applicant">
+                    <tr>
+                        <td>
+                            <select type="text" class="form-control" id="subject1"
+                                    name="subject1"
+                                    value="${applicant.subject1}">
+
+                                <c:forEach var="state" items="<%=Subject.values()%>">
+                                    <option value="${state}">${state}</option>
+                                </c:forEach>
+                            </select>
+                        </td>
+                        <td><input type="number" name="point1"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select type="text" class="form-control" id="subject2"
+                                    name="subject2"
+                                    value="${applicant.subject2}">
+
+                                <c:forEach var="state" items="<%=Subject.values()%>">
+                                    <option value="${state}">${state}</option>
+                                </c:forEach>
+                            </select>
+                        </td>
+                        <td><input type="number" name="point2"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select type="text" class="form-control" id="subject3"
+                                    name="subject3"
+                                    value="${applicant.subject3}">
+
+                                <c:forEach var="state" items="<%=Subject.values()%>">
+                                    <option value="${state}">${state}</option>
+                                </c:forEach>
+                            </select>
+                        </td>
+                        <td><input type="number" name="point3"></td>
                     </tr>
                     <tr>
                         <td><input type="submit" value="Submit"/></td>

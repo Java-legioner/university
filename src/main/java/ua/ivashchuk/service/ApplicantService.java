@@ -21,4 +21,12 @@ public class ApplicantService  {
 
         return applicantRepository.findAll();
     }
+
+    public Applicant findById(Integer id){
+        return applicantRepository.getById(id);
+    }
+
+    public void delete(Applicant applicant){
+        applicantRepository.delete(applicant);
+    }
 }

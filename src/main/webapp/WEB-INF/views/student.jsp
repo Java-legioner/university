@@ -2,7 +2,6 @@
          pageEncoding="UTF-8" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <c:set var="cotextPath" value="${pageContext.request.contextPath}"/>
 
@@ -31,7 +30,7 @@
         <a href="/all-applicants" class="w3-bar-item w3-button">All applicants</a>
         <a href="/students" class="w3-bar-item w3-button">Students</a>
         <form style="margin-left: 5%;margin-top: 5%;" action="/logout" method="post">
-            <input type="submit" class="button btn-sign_out" value="Sign Out"/> <input
+            <input type="submit" class="button red big" value="Sign Out"/> <input
                 type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </form>
     </div>
@@ -46,7 +45,7 @@
                 <div class="table-wrapper">
                     <div class="table-title">
                         <div class="row">
-                            <div class="col-sm-8"><h2>List of <b>applicants</b></h2></div>
+                            <div class="col-sm-8"><h2>List of enrolled students</h2></div>
                             <div class="col-sm-4">
                                 <div class="search-box">
                                     <i class="material-icons">&#xE8B6;</i>
@@ -71,31 +70,25 @@
                             <th>Actions</th>
                         </tr>
                         </thead>
-                        <c:if test="${not empty applicants}">
-                            <c:forEach items="${applicants}" var="currentApplicant">
+                        <c:if test="${not empty studentItems}">
+                            <c:forEach items="${studentItems}" var="student">
                                 <tbody>
                                 <tr>
-                                    <td>${currentApplicant.id}</td>
-                                    <td class="center"><img
-                                            src="data:image/jpa;base64, ${currentApplicant.encodedImage}"
-                                            style="width:25%"></td>
-                                    <td>${currentApplicant.firstName} ${currentApplicant.lastName}</td>
-                                    <td>${currentApplicant.age}</td>
-                                    <td>${currentApplicant.email}</td>
-                                    <td>${currentApplicant.faculty}</td>
-                                    <td>${currentApplicant.subject1} <br> Point: ${currentApplicant.point1}</td>
-                                    <td>${currentApplicant.subject2} <br> Point: ${currentApplicant.point2}</td>
-                                    <td>${currentApplicant.subject3} <br> Point: ${currentApplicant.point3}</td>
-                                    <td>${currentApplicant.GPA}</td>
+                                    <td>${student.id}</td>
+                                    <td class="center"><img src="data:image/jpa;base64, ${student.applicant.encodedImage}"
+                                                            style="width:25%"></td>
+                                    <td>${student.applicant.firstName} ${student.applicant.lastName}</td>
+                                    <td>${student.applicant.age}</td>
+                                    <td>${student.applicant.email}</td>
+                                    <td>${student.applicant.faculty}</td>
+                                    <td>${student.applicant.subject1} <br> Point: ${student.applicant.point1}</td>
+                                    <td>${student.applicant.subject2} <br> Point: ${student.applicant.point2}</td>
+                                    <td>${student.applicant.subject3} <br> Point: ${student.applicant.point3}</td>
+                                    <td>${student.applicant.GPA}</td>
                                     <td>
 
-                                        <form:form action="${cotextPath}/student" method="POST"
-                                                   enctype="multipart/form-data">
-                                            <input type="hidden" value="${currentApplicant.id}" name="applicantId"
-                                                   class="edit" title="add to the list of students"
-                                                   data-toggle="tooltip">
-                                            <input type="submit" class="material-icons icon" value="&#xea4d;">
-                                        </form:form>
+                                        <a href="student?id=${student.id}" class="delete" title="Delete" data-toggle="tooltip"><i
+                                                class="material-icons">&#xE872;</i></a>
                                     </td>
                                 </tr>
                                 </tbody>

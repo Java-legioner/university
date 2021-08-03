@@ -13,13 +13,12 @@ public class StudentService {
     @Autowired
     private StudentRepository studentRepository;
 
-    public Student save(Student student){
-      return   studentRepository.save(student);
+    public Student save(Student student){ return   studentRepository.save(student); }
 
-    }
+    public List<Student> FindAllStudent(){ return studentRepository.findAll(); }
 
-    public List<Student> FindAllStudent(){
-        return studentRepository.findAll();
-    }
+    public void delete(Student student){ studentRepository.delete(student); }
+
+
 
 }

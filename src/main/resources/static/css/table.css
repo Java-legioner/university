@@ -122,3 +122,8 @@ table.table td i {
     justify-content: center;
 }
 
+.icon{
+    border: none;
+    background: transparent;
+}
+

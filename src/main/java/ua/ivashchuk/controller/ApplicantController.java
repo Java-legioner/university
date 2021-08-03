@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import ua.ivashchuk.domain.Faculty;
+import ua.ivashchuk.domain.Subject;
 import ua.ivashchuk.service.ApplicantDTOHelper;
 import ua.ivashchuk.service.ApplicantService;
 
@@ -27,10 +28,18 @@ public class ApplicantController {
             @RequestParam Integer age,
             @RequestParam String email,
             @RequestParam Faculty faculty,
-            @RequestParam Integer points
+            @RequestParam Subject subject1,
+            @RequestParam Subject subject2,
+            @RequestParam Subject subject3,
+            @RequestParam Integer point1,
+            @RequestParam Integer point2,
+            @RequestParam Integer point3
     ) throws IOException {
 
-        applicantService.save(ApplicantDTOHelper.createEntity(image, firstName, lastName, age, email, faculty, points));
+        Integer GPA = (point1 + point2 + point3)/3;
+
+
+        applicantService.save(ApplicantDTOHelper.createEntity(image, firstName, lastName, age, email, faculty,subject1, subject2, subject3, point1, point2, point3, GPA));
         return new ModelAndView( "redirect:/home");
     }
 

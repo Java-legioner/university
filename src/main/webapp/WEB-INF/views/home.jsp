@@ -28,8 +28,9 @@
         <a href="/home" class="w3-bar-item w3-button">Home</a>
         <a href="/create-applicant" class="w3-bar-item w3-button">Apply for admission</a>
         <a href="/all-applicants" class="w3-bar-item w3-button">All applicants</a>
+        <a href="/students" class="w3-bar-item w3-button">Students</a>
         <form style="margin-left: 5%;margin-top: 5%;" action="/logout" method="post">
-            <input type="submit" class="button red big" value="Sign Out"/> <input
+            <input type="submit" class="button btn-sign_out" value="Sign Out"/> <input
                 type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </form>
     </div>
@@ -40,8 +41,15 @@
             <h1> Applicants</h1>
         </div>
         <div class="w3-container">
-            <h2>Welcome! ${pageContext.request.userPrincipal.name}</h2>
+            <h2 class="text-center">Welcome! ${pageContext.request.userPrincipal.name}</h2>
         </div>
+        <div>
+            <h3 class="text-center">On this site you can apply for admission to our University</h3>
+        </div>
+        <div class="button-center">
+            <a class="btn btn-primary" href="/create-applicant" role="button">Apply for admission</a>
+        </div>
+
     </div>
 </div>
 
