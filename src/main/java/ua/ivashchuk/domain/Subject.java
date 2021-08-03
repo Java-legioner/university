@@ -1,0 +1,6 @@
+package ua.ivashchuk.domain;
+
+public enum Subject {
+    UKRAINIAN, MATHEMATICS, HISTORY, ENGLISH, SPANISH, GERMAN, FRENCH, BIOLOGY, GEOGRAPHY, PHYSICS, CHEMISTRY
+
+}

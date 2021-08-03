@@ -1,4 +1,5 @@
 <%@ page import="ua.ivashchuk.domain.Faculty" %>
+<%@ page import="ua.ivashchuk.domain.Subject" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
@@ -42,46 +43,47 @@
 
 
         <div class="w3-container">
-            <%--@elvariable id="applicant" type=""--%>
             <form:form method="POST" action="${contextPath}/addApplicant" enctype="multipart/form-data" >
                 <table>
                     <tr>
-                        <td>First Name</td>
-                        <td><input type="text"name="firstName"></td>
-                    </tr>
-                    <tr>
-                        <td>Last Name</td>
-                        <td><input type="text" name="lastName"></td>
-                    </tr>
-                    <tr>
-                        <td>Age</td>
-                        <td><input type="text" name="age"></td>
-                    </tr>
-                    <tr>
-                        <td>Email</td>
-                        <td><input type="text" name="email"></td>
-                    </tr>
-                    <tr>
-                        <td>Faculty</td>
                         <td>
-                            <select type="text" class="form-control" id="faculty"
-                                    name="faculty"
+                            <select type="text" class="form-control" id="subject"
+                                    name="subject"
                                     value="${applicant.faculty}">
 
-                                <c:forEach var="state" items="<%=Faculty.values()%>">
+                                <c:forEach var="state" items="<%=Subject.values()%>">
                                     <option value="${state}">${state}</option>
                                 </c:forEach>
                             </select>
                         </td>
+                        <td><input type="number" name="points"></td>--%>
                     </tr>
-
-<%--                    <tr>--%>
-<%--                        <td>Points</td>--%>
-<%--                        <td><input type="number" name="points"></td>--%>
-<%--                    </tr>--%>
                     <tr>
-                        <td>Photo (format 3 x 4)</td>
-                        <td><input type="file" name="image"></td>
+                        <td>
+                            <select type="text" class="form-control" id="subject"
+                                    name="subject"
+                                    value="${applicant.faculty}">
+
+                                <c:forEach var="state" items="<%=Subject.values()%>">
+                                    <option value="${state}">${state}</option>
+                                </c:forEach>
+                            </select>
+                        </td>
+                        <td><input type="number" name="points"></td>--%>
+                    </tr>
+                    <tr>
+
+                        <td>
+                            <select type="text" class="form-control" id="subject"
+                                    name="subject"
+                                    value="${applicant.faculty}">
+
+                                <c:forEach var="state" items="<%=Subject.values()%>">
+                                    <option value="${state}">${state}</option>
+                                </c:forEach>
+                            </select>
+                        </td>
+                        <td><input type="number" name="points"></td>--%>
                     </tr>
                     <tr>
                         <td><input type="submit" value="Submit"/></td>

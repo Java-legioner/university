@@ -51,7 +51,7 @@
                             <div class="col-sm-4">
                                 <div class="search-box">
                                     <i class="material-icons">&#xE8B6;</i>
-                                    <input type="text" class="form-control" placeholder="Search&hellip;">
+                                    <input type="text" id="search" class="form-control" placeholder="Search&hellip;">
                                 </div>
                             </div>
                         </div>
@@ -74,9 +74,8 @@
                                 <tbody>
                                 <tr>
                                     <td>${currentApplicant.id}</td>
-                                    <td class="center"><img src="https://www.irishrsa.ie/wp-content/uploads/2017/03/default-avatar.png"
-                                             alt="Norway"
-                                             class="avatar"></td>
+                                    <td class="center"><img src="data:image/jpa;base64, ${currentApplicant.encodedImage}"
+                                                            style="width:25%"></td>
                                     <td>${currentApplicant.firstName} ${currentApplicant.lastName}</td>
                                     <td>${currentApplicant.age}</td>
                                     <td>${currentApplicant.email}</td>
@@ -103,5 +102,8 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="<c:url value="/js/search.js"/>">
+
+</script>
 </body>
 </html>

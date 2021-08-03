@@ -3,32 +3,37 @@ package ua.ivashchuk.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "applicants")
-public class Applicant {
+@Table(name = "students")
+public class Student {
 
-    @Id@GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String firstName;
     private String lastName;
     private Integer age;
     private String email;
-
     private Faculty faculty;
-
-    @Column(name = "points")
     private Integer points;
 
-    @Lob
-    private String encodedImage;
-
-    public Applicant() {
-
+    public Student() {
     }
 
-    public Applicant(String firstName, String lastName, Integer age, Faculty faculty, Integer points) {
+    public Student(Integer id, String firstName, String lastName, Integer age, String email, Faculty faculty, Integer points) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
+        this.email = email;
+        this.faculty = faculty;
+        this.points = points;
+    }
+
+    public Student(String firstName, String lastName, Integer age, String email, Faculty faculty, Integer points) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.email = email;
         this.faculty = faculty;
         this.points = points;
     }
@@ -65,12 +70,12 @@ public class Applicant {
         this.age = age;
     }
 
-    public Integer getPoints() {
-        return points;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPoints(Integer points) {
-        this.points = points;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Faculty getFaculty() {
@@ -81,22 +86,11 @@ public class Applicant {
         this.faculty = faculty;
     }
 
-    public String getEmail() {
-        return email;
+    public Integer getPoints() {
+        return points;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getEncodedImage() {
-        return encodedImage;
-    }
-
-    public void setEncodedImage(String encodedImage) {
-        this.encodedImage = encodedImage;
+    public void setPoints(Integer points) {
+        this.points = points;
     }
 }
-
-
-
