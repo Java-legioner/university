@@ -40,7 +40,7 @@ public class ApplicantController {
 
 
         applicantService.save(ApplicantDTOHelper.createEntity(image, firstName, lastName, age, email, faculty,subject1, subject2, subject3, point1, point2, point3, GPA));
-        return new ModelAndView( "redirect:/home");
+        return new ModelAndView( "congrats");
     }
 
     @RequestMapping(value = "/all-applicants", method = RequestMethod.GET)

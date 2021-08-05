@@ -39,7 +39,7 @@
 
     <div style="margin-left:15%">
         <div class="w3-container w3-teal card-text">
-            <h1> Applicants</h1>
+            <h1>Home</h1>
         </div>
         <div class="w3-container">
             <h2 class="text-center">Welcome! ${pageContext.request.userPrincipal.name}</h2>
@@ -51,10 +51,13 @@
             <a class="btn btn-primary" href="/create-applicant" role="button">Apply for admission</a>
         </div>
 
+
+
     </div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </body>
 </html>

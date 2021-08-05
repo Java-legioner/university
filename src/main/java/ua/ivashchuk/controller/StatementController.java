@@ -53,6 +53,7 @@ public class StatementController {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String username = auth.getName();
         User user = userService.findByUsername(username);
+        statement.setUser(user);
 
         statementService.save(statement);
 

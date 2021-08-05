@@ -16,6 +16,9 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String username;
+
+    @Column(name = "last_name")
+    private String lastName;
     private String email;
     private String password;
     private boolean active;
@@ -68,6 +71,7 @@ public class User implements UserDetails {
     }
 
     public String getUsername() {
+
         return username;
     }
 
@@ -98,5 +102,13 @@ public class User implements UserDetails {
 
     public String getPassword() {
         return password;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }

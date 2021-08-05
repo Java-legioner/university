@@ -1,9 +1,9 @@
 <%@ page import="ua.ivashchuk.domain.Faculty" %>
 <%@ page import="ua.ivashchuk.domain.Subject" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+         pageEncoding="UTF-8" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <c:set var="cotextPath" value="${pageContext.request.contextPath}"/>
@@ -46,11 +46,11 @@
 
         <div class="w3-container">
 
-            <form:form method="POST" action="${contextPath}/addApplicant" enctype="multipart/form-data" >
+            <form:form method="POST" action="${contextPath}/addApplicant" enctype="multipart/form-data">
                 <table class="form-applicant">
                     <tr>
                         <td>First Name</td>
-                        <td><input type="text"name="firstName"></td>
+                        <td><input type="text" name="firstName"></td>
                     </tr>
                     <tr>
                         <td>Last Name</td>
@@ -85,7 +85,8 @@
 
                 </table>
 
-                <h4>Select the subjects and indicate the points received <br> as a result of the external evaluation</h4>
+                <h4>Select the subjects and indicate the points received <br> as a result of the external evaluation
+                </h4>
                 <table class="form-applicant">
                     <tr>
                         <td>
@@ -131,13 +132,9 @@
                     </tr>
                 </table>
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-
             </form:form>
         </div>
-
     </div>
-
-
 </div>
 </body>
 </html>

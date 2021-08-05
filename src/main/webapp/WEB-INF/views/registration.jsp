@@ -18,13 +18,16 @@
     <div class="lc-block">
         <div>
             <input type="text" class="style-4" name="username"
-                   placeholder="User Name" />
+                   placeholder="First Name" />
         </div>
-        <%--        <div>--%>
-        <%--            <input type="email" class="style-4" name="email"--%>
-        <%--                   placeholder="email" />--%>
-        <%--        </div>--%>
-
+        <div>
+            <input type="text" class="style-4" name="lastName"
+                   placeholder="Last Name"/>
+        </div>
+        <div>
+            <input type="email" class="style-4" name="email"
+                   placeholder="Email"/>
+        </div>
         <div>
             <input type="password" class="style-4" name="password"
                    placeholder="Password" />
