@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <link rel="stylesheet" type="text/css" href="
-      <c:url value="/css/main.css"/>"/>
+      <c:url value="/css/app.css"/>"/>
     <link rel="stylesheet" type="text/css" href="
       <c:url value="/css/table.css"/>"/>
 </head>

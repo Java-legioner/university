@@ -16,7 +16,7 @@
     <title>Create Applicants</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" type="text/css" href="
-      <c:url value="/css/main.css"/>"/>
+      <c:url value="/css/app.css"/>"/>
 
 </head>
 <body class="security-app">
