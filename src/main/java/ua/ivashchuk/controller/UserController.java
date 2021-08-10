@@ -2,14 +2,17 @@ package ua.ivashchuk.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import ua.ivashchuk.dao.UserRepository;
-import ua.ivashchuk.domain.Role;
-import ua.ivashchuk.domain.User;
+import ua.ivashchuk.domain.*;
 
 import java.util.Arrays;
+import java.util.Date;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -58,4 +61,9 @@ public class UserController {
         return "redirect:/user";
 
     }
+
+
+
+
+
 }

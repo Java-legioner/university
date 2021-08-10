@@ -22,8 +22,14 @@ public class UserService implements UserDetailsService {
         return userRepository.findByUsername(username);
     }
 
-    public User findByUsername(String username){
+
+    public User findByUserUsername(String username){
         logger.debug("Get user item bu user name :" + username);
         return userRepository.findByUsername(username);
+    }
+
+    public void delete(User user){
+        logger.debug("Delete user item by user :" + user);
+        userRepository.delete(user);
     }
 }

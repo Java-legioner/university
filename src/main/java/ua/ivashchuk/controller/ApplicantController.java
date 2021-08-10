@@ -1,6 +1,7 @@
 package ua.ivashchuk.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -44,6 +45,7 @@ public class ApplicantController {
     }
 
     @RequestMapping(value = "/all-applicants", method = RequestMethod.GET)
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ModelAndView main(){
         ModelAndView map = new ModelAndView("allApplicants" );
         map.addObject("applicants", applicantService.findAllApplicants());

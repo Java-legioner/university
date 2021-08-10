@@ -1,0 +1,33 @@
+.container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.style-4{
+    margin: 10px 0;
+    padding: 5px;
+    width: 250px;
+}
+
+.login-form{
+    padding: 30px;
+    border: 1px solid #E100FF;
+    border-radius: 14px;
+    background: transparent;
+    background: linear-gradient(to left, #E100FF, #7F00FF);
+}
+
+.form-btn{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.link{
+    text-decoration: none;
+    color:white;
+}
+

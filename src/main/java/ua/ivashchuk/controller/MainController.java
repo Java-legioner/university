@@ -34,7 +34,6 @@ public class MainController {
     }
 
     @RequestMapping(value = "/create-applicant", method = RequestMethod.GET)
-    @PreAuthorize("hasAuthority('ADMIN')")
     public ModelAndView createApplicant(Model model){
         return new ModelAndView("createApplicant", "applicant", new Applicant());
     }

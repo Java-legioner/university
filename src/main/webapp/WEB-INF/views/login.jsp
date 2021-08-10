@@ -17,7 +17,7 @@
     <div class="lc-block">
         <div>
             <input type="text" class="style-4" name="username"
-                   placeholder="Email" />
+                   placeholder="Name" />
         </div>
         <div>
             <input type="password" class="style-4" name="password"

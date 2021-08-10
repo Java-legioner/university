@@ -1,6 +1,7 @@
 package ua.ivashchuk.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -35,11 +36,13 @@ public class StatementController {
     private ApplicantService applicantService;
 
     @RequestMapping(value = "/statements", method = RequestMethod.GET)
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ModelAndView getAllStudents() {
         return getStatementItems();
     }
 
     @RequestMapping(value = "/statement", method = RequestMethod.POST)
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ModelAndView create(@RequestParam String applicantId) {
         Applicant applicant = applicantService.findById(Integer.parseInt(applicantId));
         Integer GPA = applicant.getGPA();
@@ -52,7 +55,7 @@ public class StatementController {
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String username = auth.getName();
-        User user = userService.findByUsername(username);
+        User user = userService.findByUserUsername(username);
         statement.setUser(user);
 
         statementService.save(statement);
