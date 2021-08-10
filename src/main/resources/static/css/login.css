@@ -31,3 +31,9 @@
     color:white;
 }
 
+.alert-danger {
+    color: white;
+    background-color:transparent!important;
+    border-color: transparent !important;
+}
+
