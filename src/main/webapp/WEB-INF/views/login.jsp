@@ -20,10 +20,24 @@
 <body class="security-app">
 
 <div class="container">
-
+    <div>
+        <%--    <fieldset>--%>
+        <%--            <label><spring:message code="login.choose_lang"/></label>--%>
+        <%--            <select id="locales">--%>
+        <%--                <option value="en">English</option>--%>
+        <%--                <option value="ua">Ukrainian</option>--%>
+        <%--            </select>--%>
+        <%--    </fieldset>--%>
+        <fieldset>
+            <label><spring:message code="login.choose_language"/></label>
+            <select id="locales">
+                <option value="en"><spring:message code='login.english'/></option>
+                <option value="ua"><spring:message code='login.ukrainian'/></option>
+            </select>
+        </fieldset>
+    </div>
 
     <form name='f' action="/login" method='POST'>
-
         <div class="login-form">
             <div>
                 <input type="text" class="style-4" name="username"
@@ -51,8 +65,20 @@
         <input type="hidden" name="${_csrf.parameterName}"
                value="${_csrf.token}"/>
     </form>
-
 </div>
-
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="js/language.js" type="text/javascript"></script>
 </body>
 </html>
