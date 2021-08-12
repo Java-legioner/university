@@ -13,7 +13,7 @@
 <html>
 <head>
 
-    <title>Create Applicants</title>
+    <title><spring:message code="registration.title" text="default" /></title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" type="text/css" href="
       <c:url value="/css/app.css"/>"/>
@@ -24,29 +24,31 @@
 <div class="lc-block">
     <!-- Sidebar -->
     <div class="w3-sidebar w3-light-grey w3-bar-block " style="width:15%">
-        <h3 class="w3-bar-item">Menu</h3>
-        <a href="/home" class="w3-bar-item w3-button">Home</a>
+        <h3 class="w3-bar-item"><spring:message code="menu" text="default" /></h3>
+
+        <a href="/home" class="w3-bar-item w3-button"><spring:message code="menu.home" text="default" /></a>
         <security:authorize access="hasAuthority('USER')">
-            <a href="/create-applicant" class="w3-bar-item w3-button">Apply for admission</a>
+            <a href="/create-applicant" class="w3-bar-item w3-button"><spring:message code="menu.createApplicant" text="default" /></a>
         </security:authorize>
 
         <security:authorize access="hasAuthority('ADMIN')">
-            <a href="/all-applicants" class="w3-bar-item w3-button">All applicants</a>
+            <a href="/all-applicants" class="w3-bar-item w3-button"><spring:message code="menu.allApplicant" text="default" /></a>
         </security:authorize>
 
         <security:authorize access="hasAnyAuthority('ADMIN', 'USER')">
-            <a href="/students" class="w3-bar-item w3-button">Students</a>
+            <a href="/students" class="w3-bar-item w3-button"><spring:message code="menu.student" text="default" /></a>
         </security:authorize>
 
         <security:authorize access="hasAuthority('ADMIN')">
-            <a href="/statements" class="w3-bar-item w3-button">Statement</a>
+            <a href="/statements" class="w3-bar-item w3-button"><spring:message code="menu.statement" text="default" /></a>
         </security:authorize>
 
         <security:authorize access="hasAuthority('ADMIN')">
-            <a href="/user" class="w3-bar-item w3-button">User List</a>
+            <a href="/user" class="w3-bar-item w3-button"><spring:message code="menu.userList" text="default" /></a>
         </security:authorize>
+
         <form style="margin-left: 5%;margin-top: 5%;" action="/logout" method="post">
-            <input type="submit" class="button btn-sign_out" value="Sign Out"/> <input
+            <input type="submit" class="button btn-sign_out" value="<spring:message code="signOut" text="default" />"/> <input
                 type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </form>
     </div>
@@ -65,23 +67,23 @@
             <form:form method="POST" action="${contextPath}/addApplicant" enctype="multipart/form-data">
                 <table class="form-applicant">
                     <tr>
-                        <td>First Name</td>
+                        <td><spring:message code="registration.firstName" text="default" /></td>
                         <td><input type="text" name="firstName"></td>
                     </tr>
                     <tr>
-                        <td>Last Name</td>
+                        <td><spring:message code="registration.lastName" text="default" /></td>
                         <td><input type="text" name="lastName"></td>
                     </tr>
                     <tr>
-                        <td>Age</td>
+                        <td><spring:message code="crApp.age" text="default" /></td>
                         <td><input type="text" name="age"></td>
                     </tr>
                     <tr>
-                        <td>Email</td>
+                        <td><spring:message code="registration.email" text="default" /></td>
                         <td><input type="text" name="email"></td>
                     </tr>
                     <tr>
-                        <td>Faculty</td>
+                        <td><spring:message code="crApp.faculty" text="default" /></td>
                         <td>
                             <select type="text" class="form-control" id="faculty"
                                     name="faculty"
@@ -95,13 +97,13 @@
                     </tr>
 
                     <tr>
-                        <td>Photo (format 3 x 4)</td>
+                        <td><spring:message code="crApp.photo" text="default" /></td>
                         <td><input type="file" name="image"></td>
                     </tr>
 
                 </table>
 
-                <h4>Select the subjects and indicate the points received <br> as a result of the external evaluation
+                <h4><spring:message code="crApp.selPoints" text="default" /> <br> <spring:message code="crApp.selPointsP2" text="default" />
                 </h4>
                 <table class="form-applicant">
                     <tr>
@@ -144,7 +146,7 @@
                         <td><input type="number" name="point3"></td>
                     </tr>
                     <tr>
-                        <td><input type="submit" value="Submit"/></td>
+                        <td><input type="submit" value="<spring:message code="submit" text="default" />"/></td>
                     </tr>
                 </table>
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
@@ -152,5 +154,7 @@
         </div>
     </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="<c:url value="/js/language.js"/>"></script>
 </body>
 </html>

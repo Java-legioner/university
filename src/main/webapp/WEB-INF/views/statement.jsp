@@ -25,29 +25,31 @@
 <div class="lc-block">
     <!-- Sidebar -->
     <div class="w3-sidebar w3-light-grey w3-bar-block " style="width:15%">
-        <h3 class="w3-bar-item">Menu</h3>
-        <a href="/home" class="w3-bar-item w3-button">Home</a>
+        <h3 class="w3-bar-item"><spring:message code="menu" text="default" /></h3>
+
+        <a href="/home" class="w3-bar-item w3-button"><spring:message code="menu.home" text="default" /></a>
         <security:authorize access="hasAuthority('USER')">
-            <a href="/create-applicant" class="w3-bar-item w3-button">Apply for admission</a>
+            <a href="/create-applicant" class="w3-bar-item w3-button"><spring:message code="menu.createApplicant" text="default" /></a>
         </security:authorize>
 
         <security:authorize access="hasAuthority('ADMIN')">
-            <a href="/all-applicants" class="w3-bar-item w3-button">All applicants</a>
+            <a href="/all-applicants" class="w3-bar-item w3-button"><spring:message code="menu.allApplicant" text="default" /></a>
         </security:authorize>
 
         <security:authorize access="hasAnyAuthority('ADMIN', 'USER')">
-            <a href="/students" class="w3-bar-item w3-button">Students</a>
+            <a href="/students" class="w3-bar-item w3-button"><spring:message code="menu.student" text="default" /></a>
         </security:authorize>
 
         <security:authorize access="hasAuthority('ADMIN')">
-            <a href="/statements" class="w3-bar-item w3-button">Statement</a>
+            <a href="/statements" class="w3-bar-item w3-button"><spring:message code="menu.statement" text="default" /></a>
         </security:authorize>
 
         <security:authorize access="hasAuthority('ADMIN')">
-            <a href="/user" class="w3-bar-item w3-button">User List</a>
+            <a href="/user" class="w3-bar-item w3-button"><spring:message code="menu.userList" text="default" /></a>
         </security:authorize>
+
         <form style="margin-left: 5%;margin-top: 5%;" action="/logout" method="post">
-            <input type="submit" class="button btn-sign_out" value="Sign Out"/> <input
+            <input type="submit" class="button btn-sign_out" value="<spring:message code="signOut" text="default" />"/> <input
                 type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </form>
     </div>
@@ -55,14 +57,14 @@
 
     <div style="margin-left:15%">
         <div class="w3-container w3-teal card-text">
-            <h1> Statement</h1>
+            <h1> <spring:message code="statement.title" text="default" /></h1>
         </div>
         <div class="container">
             <div class="table-responsive">
                 <div class="table-wrapper">
                     <div class="table-title">
                         <div class="row">
-                            <div class="col-sm-8"><h2>Statement</h2></div>
+                            <div class="col-sm-8"><h2><spring:message code="statement.title" text="default" /></h2></div>
                             <div class="col-sm-4">
                                 <div class="search-box">
                                     <i class="material-icons">&#xE8B6;</i>
@@ -76,14 +78,14 @@
                         <tr>
 <%--                            <th>#</th>--%>
 <%--                            <th>Photo</th>--%>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Faculty</th>
-                            <th>Subject</th>
-                            <th>Subject</th>
-                            <th>Subject</th>
-                            <th>GPA</th>
-                            <th>Actions</th>
+                            <th><spring:message code="registration.firstName" text="default" /></th>
+                            <th><spring:message code="registration.lastName" text="default" /></th>
+                            <th><spring:message code="table.faculty" text="default" /></th>
+                            <th><spring:message code="table.subject" text="default" /></th>
+                            <th><spring:message code="table.subject" text="default" /></th>
+                            <th><spring:message code="table.subject" text="default" /></th>
+                            <th><spring:message code="table.GPA" text="default" /></th>
+                            <th><spring:message code="table.actions" text="default" /></th>
                         </tr>
                         </thead>
                         <c:if test="${not empty statementItems}">
@@ -115,11 +117,8 @@
         </div>
     </div>
 </div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="<c:url value="/js/search.js"/>">
-
-</script>
+<script src="<c:url value="/js/search.js"/>"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="<c:url value="/js/language.js"/>"></script>
 </body>
 </html>

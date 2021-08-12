@@ -15,10 +15,17 @@
 
 .card-text{
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 60%;
+    flex-direction: inherit;
 }
+
+.header-lang{
+    width: 84%;
+}
+
+.lang{
+    align-self: center;
+}
+
 .w3-teal, .w3-hover-teal:hover {
     color: #fff!important;
     background: #7F00FF;
@@ -66,4 +73,11 @@
     border: 1px solid #000000;
     width: 25%;
     border-radius: 11px;
+}
+
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: black !important;
 }

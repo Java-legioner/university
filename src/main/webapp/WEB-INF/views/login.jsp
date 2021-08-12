@@ -14,71 +14,55 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="
       <c:url value="/css/login.css"/>"/>
+    <title><spring:message code="login.title" text="default" /></title>
 
 
 </head>
 <body class="security-app">
 
 <div class="container">
-    <div>
-        <%--    <fieldset>--%>
-        <%--            <label><spring:message code="login.choose_lang"/></label>--%>
-        <%--            <select id="locales">--%>
-        <%--                <option value="en">English</option>--%>
-        <%--                <option value="ua">Ukrainian</option>--%>
-        <%--            </select>--%>
-        <%--    </fieldset>--%>
-        <fieldset>
-            <label><spring:message code="login.choose_language"/></label>
-            <select id="locales">
-                <option value="en"><spring:message code='login.english'/></option>
-                <option value="ua"><spring:message code='login.ukrainian'/></option>
-            </select>
-        </fieldset>
-    </div>
+<%--    <div>--%>
+<%--        <div>--%>
+
+<%--                <span><spring:message code="login.change" /></span>:--%>
+<%--                <select id="locales">--%>
+<%--                    <option value="en"><spring:message code="login.en" text="default" /></option>--%>
+<%--                    <option value="ua"><spring:message code="login.ua" text="default" /> </option>--%>
+<%--                </select>--%>
+<%--        </div>--%>
+<%--    </div>--%>
 
     <form name='f' action="/login" method='POST'>
         <div class="login-form">
             <div>
                 <input type="text" class="style-4" name="username"
-                       placeholder="Name"/>
+                       placeholder="<spring:message code="login.name" text="default"/>" />
             </div>
             <div>
                 <input type="password" class="style-4" name="password"
-                       placeholder="Password"/>
+                       placeholder="<spring:message code="login.password" text="default"/>" />
             </div>
             <div class="form-btn">
                 <div>
-                    <input type="submit" value="Sign In" class="button red small"/>
+                    <input type="submit"  class="button red small"  value="<spring:message code="login.signIn" text="default"/>" />
                 </div>
                 <div>
-                    <a href="/registration" class="link">Add new User</a>
+                    <a href="/registration" class="link"><spring:message code="login.registration" /></a>
                 </div>
             </div>
             <c:if test="${param.error ne null}">
-                <div class="alert-danger" style="padding-top:15px ">Invalid username and password.</div>
+                <div class="alert-danger" style="padding-top:15px "><spring:message code="alertDanger" text="default" /></div>
             </c:if>
             <c:if test="${param.logout ne null}">
-                <div class="alert-normal" style="padding-top: 15px">You have been logged out.</div>
+                <div class="alert-normal" style="padding-top: 15px"><spring:message code="alertNormal" text="default" /></div>
             </c:if>
         </div>
         <input type="hidden" name="${_csrf.parameterName}"
                value="${_csrf.token}"/>
     </form>
 </div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
-<script
-        src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
-<script
-        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="js/language.js" type="text/javascript"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="<c:url value="/js/language.js"/>"></script>
 </body>
 </html>

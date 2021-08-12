@@ -28,29 +28,31 @@
 <div class="lc-block">
     <!-- Sidebar -->
     <div class="w3-sidebar w3-light-grey w3-bar-block " style="width:15%">
-        <h3 class="w3-bar-item">Menu</h3>
-        <a href="/home" class="w3-bar-item w3-button">Home</a>
+        <h3 class="w3-bar-item"><spring:message code="menu" text="default" /></h3>
+
+        <a href="/home" class="w3-bar-item w3-button"><spring:message code="menu.home" text="default" /></a>
         <security:authorize access="hasAuthority('USER')">
-            <a href="/create-applicant" class="w3-bar-item w3-button">Apply for admission</a>
+            <a href="/create-applicant" class="w3-bar-item w3-button"><spring:message code="menu.createApplicant" text="default" /></a>
         </security:authorize>
 
         <security:authorize access="hasAuthority('ADMIN')">
-            <a href="/all-applicants" class="w3-bar-item w3-button">All applicants</a>
+            <a href="/all-applicants" class="w3-bar-item w3-button"><spring:message code="menu.allApplicant" text="default" /></a>
         </security:authorize>
 
         <security:authorize access="hasAnyAuthority('ADMIN', 'USER')">
-            <a href="/students" class="w3-bar-item w3-button">Students</a>
+            <a href="/students" class="w3-bar-item w3-button"><spring:message code="menu.student" text="default" /></a>
         </security:authorize>
 
         <security:authorize access="hasAuthority('ADMIN')">
-            <a href="/statements" class="w3-bar-item w3-button">Statement</a>
+            <a href="/statements" class="w3-bar-item w3-button"><spring:message code="menu.statement" text="default" /></a>
         </security:authorize>
 
         <security:authorize access="hasAuthority('ADMIN')">
-            <a href="/user" class="w3-bar-item w3-button">User List</a>
+            <a href="/user" class="w3-bar-item w3-button"><spring:message code="menu.userList" text="default" /></a>
         </security:authorize>
+
         <form style="margin-left: 5%;margin-top: 5%;" action="/logout" method="post">
-            <input type="submit" class="button btn-sign_out" value="Sign Out"/> <input
+            <input type="submit" class="button btn-sign_out" value="<spring:message code="signOut" text="default" />" /> <input
                 type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </form>
     </div>
@@ -58,7 +60,7 @@
 
     <div style="margin-left:15%">
         <div class="w3-container w3-teal card-text">
-            <h1>User Editor</h1>
+            <h1><spring:message code="userEdit.title" text="default" /></h1>
         </div>
         <form action="/user" method='POST'>
 
@@ -81,8 +83,7 @@
         </form>
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="<c:url value="/js/language.js"/>"></script>
 </body>
 </html>
