@@ -21,16 +21,7 @@
 <body class="security-app">
 
 <div class="container">
-<%--    <div>--%>
-<%--        <div>--%>
 
-<%--                <span><spring:message code="login.change" /></span>:--%>
-<%--                <select id="locales">--%>
-<%--                    <option value="en"><spring:message code="login.en" text="default" /></option>--%>
-<%--                    <option value="ua"><spring:message code="login.ua" text="default" /> </option>--%>
-<%--                </select>--%>
-<%--        </div>--%>
-<%--    </div>--%>
 
     <form name='f' action="/login" method='POST'>
         <div class="login-form">

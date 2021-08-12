@@ -57,6 +57,14 @@
     <div style="margin-left:15%">
         <div class="w3-container w3-teal card-text">
             <h1><spring:message code="congrats.title" text="default" /></h1>
+            <div class="lang">
+                <span><spring:message code="login.change" /></span>:
+                <select id="locales">
+                    <%--            <option value=""></option>--%>
+                    <option class="sel-lang" value="en"><spring:message code="login.en" text="default" /></option>
+                    <option class="sel-lang" value="ua"><spring:message code="login.ua" text="default" /> </option>
+                </select>
+            </div>
         </div>
         <div class="w3-container">
             <h2 class="text-center"><spring:message code="congrats.title" text="default" /> ${pageContext.request.userPrincipal.name}</h2>
