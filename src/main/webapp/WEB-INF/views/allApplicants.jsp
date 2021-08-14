@@ -58,7 +58,7 @@
 
     <div style="margin-left:15%">
         <div class="w3-container w3-teal card-text">
-            <h1> <spring:message code="allApplicants.title" text="default" /></h1>
+            <h1 class="header-lang"> <spring:message code="allApplicants.title" text="default" /></h1>
             <div class="lang">
                 <span><spring:message code="login.change" /></span>:
                 <select id="locales">

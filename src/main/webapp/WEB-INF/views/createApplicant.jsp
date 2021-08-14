@@ -56,8 +56,8 @@
     <!-- Page Content -->
     <div style="margin-left:15%">
 
-        <div class="w3-container w3-teal">
-            <h1> Registration of applicant</h1>
+        <div class="w3-container w3-teal card-text">
+            <h1 class="header-lang"> Registration of applicant</h1>
             <div class="lang">
                 <span><spring:message code="login.change" /></span>:
                 <select id="locales">
