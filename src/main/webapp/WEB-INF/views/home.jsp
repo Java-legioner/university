@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
@@ -11,11 +12,11 @@
 <html>
 <head>
     <title><spring:message code="home.title" text="default" /></title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 
     <link rel="stylesheet" type="text/css" href="
       <c:url value="/css/app.css"/>"/>
@@ -69,7 +70,7 @@
             </div>
         </div>
         <div class="w3-container">
-            <h2 class="text-center"><spring:message code="home.title" text="default" /> ${pageContext.request.userPrincipal.name}</h2>
+            <h2 id="user-name" class="text-center"><spring:message code="home.title" text="default" /> ${pageContext.request.userPrincipal.name}</h2>
         </div>
         <div>
             <h3 class="text-center"><spring:message code="home.text" text="default" /></h3>

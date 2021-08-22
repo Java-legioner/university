@@ -9,8 +9,13 @@ public class Applicant {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
+    @Column(name = "first_name")
     private String firstName;
+
+    @Column(name="last_name")
     private String lastName;
+
     private Integer age;
     private String email;
     private Faculty faculty;
@@ -29,6 +34,21 @@ public class Applicant {
 
     }
 
+    public Applicant(String firstName, String lastName, Integer age, String email, Faculty faculty, Subject subject1, Subject subject2, Subject subject3, Integer point1, Integer point2, Integer point3, Integer GPA, String encodedImage) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.email = email;
+        this.faculty = faculty;
+        this.subject1 = subject1;
+        this.subject2 = subject2;
+        this.subject3 = subject3;
+        this.point1 = point1;
+        this.point2 = point2;
+        this.point3 = point3;
+        this.GPA = GPA;
+        this.encodedImage = encodedImage;
+    }
 
     public Integer getId() {
         return id;

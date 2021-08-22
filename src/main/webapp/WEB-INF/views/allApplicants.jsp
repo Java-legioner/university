@@ -82,7 +82,7 @@
                             </div>
                         </div>
                     </div>
-                    <table class="table table-striped table-hover table-bordered">
+                    <table class="table table-striped table-hover table-bordered" id="applicants-list">
                         <thead>
                         <tr>
                             <th>#</th>

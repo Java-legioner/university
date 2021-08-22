@@ -32,8 +32,5 @@ public class StatementService {
         statementRepository.delete(statement);
     }
 
-    public Statement findById(Integer id){
-        logger.debug("Get statement item bu id " + id);
-        return statementRepository.getById(id);
-    }
+
 }

@@ -8,7 +8,10 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import ua.ivashchuk.dao.UserRepository;
+import ua.ivashchuk.domain.Role;
 import ua.ivashchuk.domain.User;
+
+import java.util.Collections;
 
 @Service
 public class UserService implements UserDetailsService {
@@ -23,13 +26,25 @@ public class UserService implements UserDetailsService {
     }
 
 
-    public User findByUserUsername(String username){
+
+    public User findByUsername(String username){
         logger.debug("Get user item bu user name :" + username);
         return userRepository.findByUsername(username);
     }
 
-    public void delete(User user){
-        logger.debug("Delete user item by user :" + user);
-        userRepository.delete(user);
+    public boolean addUser(User user){
+        User userFromDB = userRepository.findByUsername(user.getUsername());
+
+        if(userFromDB != null){
+            return false;
+        }
+
+        user.setActive(true);
+        user.setRoles(Collections.singleton(Role.USER));
+        userRepository.save(user);
+
+        return true;
     }
+
+
 }
